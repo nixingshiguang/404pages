@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 主页</title>
     <script>
-        // 随机生成一个整数
-        var randomNum = Math.floor(Math.random() * 9) + 1;
-        // 从404页面数组中，随机选出一个进行302重定向
-        var urls = `./404-${randomNum}.html`;
-        // 302重定向
-        window.location.href = urls;
+        // 检查当前页面的路径
+        if (window.location.pathname === '/') {
+            // 随机生成一个整数
+            var randomNum = Math.floor(Math.random() * 9) + 1;
+            // 从404页面数组中，随机选出一个进行302重定向
+            var url = `./404-${randomNum}.html`;
+            // 302重定向
+            window.location.href = url;
+        }
     </script>
 </head>
 
